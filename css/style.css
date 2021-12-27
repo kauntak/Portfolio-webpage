@@ -3,16 +3,20 @@
 	--nickNameDelayTime: 3s;
 	--iLoveDelayTime: 6s;
 	--makingThingsDelayTime: 7s;
-	--problemSolvingDelayTime: 7.3s; 
-	--computerRelatedDelayTime: 7.6s;
-	--exceptPrintersDelayTime: 7.8s;
-	--titleDelayTime: 10s;
-	--portfolioDelayTime: 15s;
-	--aboutMeDelayTime: 17s;
-	--contactDelayTime: 19s;
-	--portfolioButtonDelayTime: 16s;
-	--aboutMeButtonDelayTime: 18s;
-	--contactButtonDelayTime: 20s;
+	--problemSolvingDelayTime: 7.5s; 
+	--teamWorkDelayTime: 8s;
+	--selfReliantDelayTime: 8.5s;
+	--learningDelayTime: 9s;
+	--computerRelatedDelayTime: 9.5s;
+	--exceptPrintersDelayTime: 10s;
+	--titleDelayTime: 12s;
+	--portfolioDelayTime: 16s;
+	--aboutMeDelayTime: 18s;
+	--contactDelayTime: 20s;
+	--portfolioButtonDelayTime: 176s;
+	--aboutMeButtonDelayTime: 19s;
+	--contactButtonDelayTime: 21s;
+	--homeLeftDelayTime: 25s;
 }
 
 html, body {
@@ -143,23 +147,26 @@ body {
 }
 #home-left{
 	width: 35%;
-
+	opacity: 100%;
+	/* animation: hideLeft 2s ease-in var(--homeLeftDelayTime) 1 normal forwards; */
+	transition: width 1s, opacity 1s;
 }
 #home-right{
-	width:50vh;
+	width:50vw;
 	padding-top: 5vh;
+	/*animation: expandRight 2s ease-in var(--homeLeftDelayTime) 1 normal forwards;*/
 }
 #name-sentence{
 	opacity: 0;
-	animation: displayText 1s ease-in var(--nameDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--nameDelayTime) 1 normal forwards;
 }
 #nick-name-sentence{
 	opacity: 0;
-	animation: displayText 1s ease-in var(--nickNameDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--nickNameDelayTime) 1 normal forwards;
 }
 #title-sentence{
 	opacity: 0;
-	animation: displayText 1s ease-in var(--titleDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--titleDelayTime) 1 normal forwards;
 }
 #portfolio-sentence{
 	opacity: 0;
@@ -178,25 +185,40 @@ body {
 	padding-top: 16px;
 	background: none;
 }
+.arrow-sentence{
+	z-index: 3;
+}
 #desc-sentence{
 	display: flex;
 	flex-direction: row;
 }
 #i-love{
 	opacity: 0;
-	animation: displayText 1s ease-in var(--iLoveDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--iLoveDelayTime) 1 normal forwards;
 }
 #making-things{
 	opacity: 0;
-	animation: displayText 1s ease-in var(--makingThingsDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--makingThingsDelayTime) 1 normal forwards;
+}
+#team-work{
+	opacity: 0;
+	animation: displayText 5s ease-in var(--teamWorkDelayTime) 1 normal forwards;
+}
+#self-reliant{
+	opacity: 0;
+	animation: displayText 5s ease-in var(--selfReliantDelayTime) 1 normal forwards;
+}
+#learning{
+	opacity: 0;
+	animation: displayText 5s ease-in var(--learningDelayTime) 1 normal forwards;
 }
 #problem-solving{
 	opacity: 0;
-	animation: displayText 1s ease-in var(--problemSolvingDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--problemSolvingDelayTime) 1 normal forwards;
 }
 #computer-related{
 	opacity: 0;
-	animation: displayText 1s ease-in var(--computerRelatedDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--computerRelatedDelayTime) 1 normal forwards;
 }
 #love-list{
 	display: flex;
@@ -204,13 +226,14 @@ body {
 	padding-left: 15px;
 }
 #except-printers{
-	font-size: 5px !important;;
+	font-size: 11px !important;;
 	padding: 2px;
+	padding-left:15px;
 	line-height: 6px;
 	margin:0px;
 	background: none;
 	opacity: 0;
-	animation: displayText 1s ease-in var(--exceptPrintersDelayTime) 1 normal forwards;
+	animation: displayText 5s ease-in var(--exceptPrintersDelayTime) 1 normal forwards;
 }
 .tab-explanation{
 	position: fixed;
@@ -222,12 +245,14 @@ body {
 }
 @keyframes displayText{
 	0% {opacity: 0;}
-	100% {opacity: 1;}
+	25%{opacity: 1;}
+	75%{opacity: 1;}
+	100% {opacity: 0;}
 }
 @keyframes displayThenClearText{
 	0% {opacity: 0; }
 	50% {opacity: 1;}
-	100% {opacity: 0; display:none}
+	100% {opacity: 0; display:none;}
 }
 
 #portfolioPic{
@@ -251,6 +276,13 @@ body {
 	text-align: center;
 	padding: 5px;
 }
+#large-screen-info{
+	padding: 5px;
+	transition: all 2s;
+	position: relative;
+	left: 10%;
+	top: 5%;
+}
 #myCanvasContainer{
 	justify-content: center;
 	align-items: center;
@@ -258,6 +290,7 @@ body {
 	display: flex;
 	transform: scale3d(2,2,2);
 	opacity: 0;
+	transition: position 2s left 2s top 2s;
 }
 .panel{
 	min-width: 100%;
@@ -270,7 +303,7 @@ body {
 	background: -webkit-linear-gradient(to right, #243B55, #141E30, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
-	z-index: 2;
+	z-index: 10;
 	-webkit-transition: all .8s ease-in-out;
 	-moz-transition: all .8s ease-in-out;
 	-o-transition: all .8s ease-in-out;
@@ -286,20 +319,6 @@ body {
 #contact:target ~ #header #navigation #link-contact{
 	background: #000;
 	color: #fff;
-}
-#works {
-	padding: 15px 0px;
-}
-#works li{
-	display: inline;
-}
-#works li a{
-	padding-right: 10px;
-}
-#works img {
-	box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-	padding: 12px; 
-	background: rgba(255,255,255,0.9);
 }
 
 .ff-container{
@@ -468,7 +487,16 @@ body {
 	padding-right: 10px;
 	float: left;
 }
-
+.contact-link{
+	vertical-align: center;
+}
+.contact-icon{
+	max-width: 35px;
+	max-height: 35px;
+	padding-left: 15px;
+	position: relative;
+	top: 10px;
+}
 
 .project-overview{
 	display: none; 
@@ -649,8 +677,11 @@ body {
 		display: none;
 	}
 	#myCanvasContainer{
+		display: flex;
 		transform: scale3d(1,1,1);
 		opacity: 1;
+		position: relative !important;
+		margin-top: -175px;
 	}
 	.panel{
 		overflow-y: auto;
