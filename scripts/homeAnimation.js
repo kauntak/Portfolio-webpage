@@ -93,8 +93,7 @@ function condenseIn(){
             if(scale >= 1) {
                 scale -= 0.01;
                 element.style.transform = `scale3d(${scale},${scale},${scale})`;
-            } 
-            console.log(scale, opacity);
+            }
         }
     }
 }
