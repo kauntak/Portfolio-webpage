@@ -12,10 +12,8 @@ var cardCloseSpan = document.getElementById("card-close");
 
 
 window.onclick = (event) => {
-    console.log(event.target);
-    console.log(event.target == cardOverview)
-    if(event.target == menuOverview){
-        menuOverview.style.display = "none";
+    if(event.target == sambaOverview){
+        sambaOverview.style.display = "none";
     } else if(event.target == cardOverview){
         cardOverview.style.display = "none";
     } else if(event.target == menuOverview){
