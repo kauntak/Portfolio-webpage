@@ -478,7 +478,7 @@ body {
 	top: 0;
 	margin:-50px;
 	width: 110%;
-	height: fit-content;
+	height: 110%;
 	overflow: auto;
 	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0,0.4);
@@ -492,8 +492,17 @@ body {
 	width: fit-content;
 	height: fit-content;
 }
-
-
+.project-overview-content h3{
+	font-size: x-large;
+	color: rgb(3, 44, 44);
+	margin-top: 10px;
+}
+.project-overview-content h4{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-size: large;
+	color: rgb(3, 44, 44);
+}
 .close {
 	color: #aaa;
 	float: right;
