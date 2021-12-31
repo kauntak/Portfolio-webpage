@@ -46,8 +46,8 @@
     <div id="room" class="panel">
       <div class="language en room-content">
           <div class="tab">
-            <button class="tablinks active" onclick="openSelectOrCreateRoom(event, 'select-room')">Select Room</button>
-            <button class="tablinks" onclick="openSelectOrCreateRoom(event, 'create-room')">Create Room</button>
+            <button class="tablinks active select-room-tab-button" onclick="openSelectOrCreateRoom(event, 'select-room')">Select Room</button>
+            <button class="tablinks create-room-tab-button" onclick="openSelectOrCreateRoom(event, 'create-room')">Create Room</button>
           </div>
           <div class="select-room">
             <h3>Please select a room to join!</h3>
@@ -56,8 +56,8 @@
                   <!-- Dynamically create radio buttons here   -->
               </div>
               <div class="room-password">
-                <label for="room-password">Password:</label>
-                <input type="text" name="room-password" id="room-password-en">
+                <label for="room-password-en">Password:</label>
+                <input type="text" name="room-password-en" id="room-password-en">
               </div>
               <input type="submit" value="Join room!" id="select-room-en" disabled>
             </form>
@@ -66,8 +66,8 @@
             <h3>Create a new room!</h3>
             <form action="submit" id="room-creation-form-en" class="room-creation-form">
               <div class="create-room-content">
-                <label for="new-room-name">Room name:</label>   
-                <input type="text" name="new-room-name" required>
+                <label for="new-room-name-en">Room name:</label>   
+                <input type="text" name="new-room-name-en" id="new-room-name-en" required>
               </div>
               <div class="create-room-content">
                 <label for="require-password-en">Turn on password?</label>
@@ -76,8 +76,8 @@
                 </div>
               </div>
               <div class="password create-room-content">
-                <label for="new-room-password">Password:</label>
-                <input type="text" name="new-room-password">
+                <label for="new-room-password-en">Password:</label>
+                <input type="text" name="new-room-password-en" id="new-room-password-en">
               </div>
               <input class="create-room-button" type="submit" value="Create room!">
             </form>
@@ -85,38 +85,45 @@
       </div>
       <div class="language ja room-content">
         <div class="tab">
-          <button class="tablinks" onclick="openSelectOrCreateRoom(event, 'select-room')">部屋に入る</button>
-          <button class="tablinks" onclick="openSelectOrCreateRoom(event, 'create-room')">部屋を作る</button>
+          <button class="tablinks active select-room-tab-button" onclick="openSelectOrCreateRoom(event, 'select-room')">部屋に入る</button>
+          <button class="tablinks create-room-tab-button" onclick="openSelectOrCreateRoom(event, 'create-room')">部屋を作る</button>
         </div>
         <div class="select-room">
           <h3>接続する部屋を選んでください!</h3>
           <form action="submit" id="room-selection-form-ja">
-            <div class="room-list">
-                <div class="room-list-content" id="room-list-content-ja">
-                  <h5 class="player-count-list">人数</h5><h5 class="room-name-list">部屋名</h5>
-                    
-                </div>
+            <div class="room-list-content" id="room-list-content-ja">
+                <!-- Dynamically create radio buttons here   -->
             </div>
-            <label for="room-password">合言葉:</label>
-            <input type="text" name="room-password" id="room-password-ja">
-            <input type="submit" value="接続する!" id="select-room-ja" disabled>
+            <div class="room-password">
+              <label for="room-password-ja">合言葉:</label>
+              <input type="text" name="room-password-ja" id="room-password-ja">
+            </div>
+            <input type="submit" value="部屋に入る!" id="select-room-ja" disabled>
           </form>
         </div>
         <div class="create-room">
           <h3>新しい部屋を作ろう!</h3>
-          <form action="" id="room-creation-form-ja">
-            <label for="new-room-name">部屋名:</label>
-            <input type="text" name="new-room-name" required>
-            <label for="require-password">合言葉をつけますか?</label>
-            <input type="checkbox" name="require-password" id="require-password-ja">
-            <div class="require-password">
-              <label for="new-room-password">合言葉:</label>
-              <input type="text" name="new-room-password">
+          <form action="submit" id="room-creation-form-ja" class="room-creation-form">
+            <div class="create-room-content">
+              <label for="new-room-name-ja">部屋名:</label>   
+              <input type="text" id="new-room-name-ja" name="new-room-name-ja" required>
             </div>
-            <input type="submit" value="新しい部屋を作成!">
+            <div class="create-room-content">
+              <label for="require-password-ja">合言葉を ON?</label>
+              <div class="switch">
+                <input type="checkbox" name="require-password-ja" id="require-password-ja" class="require-password-checkbox" onchange="togglePassword(event)"><label for="require-password-ja" class="require-password-label">Toggle</label>
+              </div>
+            </div>
+            <div class="password create-room-content">
+              <label for="new-room-password-ja">合言葉:</label>
+              <input type="text" id="new-room-password-ja" name="new-room-password-ja">
+            </div>
+            <input class="create-room-button" type="submit" value="部屋を作る!">
           </form>
         </div>
       </div>
+    
+    
     </div>
 
     <div id="game-lobby" class="panel">
