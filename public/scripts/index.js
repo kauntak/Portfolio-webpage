@@ -10,6 +10,9 @@ var cardOverview = document.getElementById("card-overview");
 var cardAction = document.getElementById("card-design-link");
 var cardCloseSpan = document.getElementById("card-close");
 
+var jinrouOverview = document.getElementById("jinrou-overview");
+var jinrouAction = document.getElementById("jinrou-project-link");
+var jinrouCloseSpan = document.getElementById("jinrou-close");
 
 window.onclick = (event) => {
     if(event.target == sambaOverview){
@@ -18,6 +21,8 @@ window.onclick = (event) => {
         cardOverview.style.display = "none";
     } else if(event.target == menuOverview){
         menuOverview.style.display = "none";
+    } else if(event.target == jinrouOverview){
+        jinrouOverview.style.display == "none";
     }
 }
 
@@ -45,6 +50,16 @@ cardAction.onclick = () => {
 cardCloseSpan.onclick = () =>{
     cardOverview.style.display = "none";
 }
+
+jinrouAction.onclick = () => {
+    console.log("Jinrou Clicked");
+    jinrouOverview.style.display = "block";
+    return false;
+}
+jinrouCloseSpan.onclick = () =>{
+    jinrouOverview.style.display = "none";
+}
+
 
 var slideIndex = [1,1];
 var slideId = ["menu-gallery", "card-gallery"];
