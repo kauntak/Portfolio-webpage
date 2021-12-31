@@ -91,7 +91,6 @@ var roomSize = 0;
 var socket = io();
 socket.on("initiate", data => {
     ID = data.id;
-    console.log(data);
     for(let i in data.rooms){
         addToRoomList(data.rooms[i]);
     }
@@ -113,26 +112,27 @@ document.getElementById("welcome-form-ja").addEventListener("submit", event =>{
 });
 
 function openSelectOrCreateRoom(event, option){
-    function startDisplayDiv(){
-        let optionElements = document.getElementsByClassName(option);
-        for(let i = 0; i < optionElements.length; i++)
-            optionElements[i].style.maxHeight = "50vh";
-    }
+    if(event.target.className.search("active") != -1) return;
     let oppositeOption = "select-room"
     if(option == "select-room")
         oppositeOption = "create-room";
     let elements = document.getElementsByClassName(oppositeOption);
+    elements[0].addEventListener("transitionend", () => {
+        let optionElements = document.getElementsByClassName(option);
+        for(let i = 0; i < optionElements.length; i++)
+            optionElements[i].style.maxHeight = "50vh";
+    }, {once:true});
     for(let i = 0; i < elements.length; i++){
         elements[i].style.maxHeight = "0px";
-        if(i == 0){
-            elements[i].addEventListener("transitionend", startDisplayDiv);
-        }
     }
-    let tablinks = document.getElementsByClassName("tablinks");
-    for(let i = 0; i < tablinks.length; i++){
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    elements = document.getElementsByClassName(oppositeOption + "-tab-button");
+    for(let i = 0; i < elements.length; i++){
+        elements[i].className = elements[i].className.replace(" active", "");
     }
-    event.target.className += " active";
+    elements = document.getElementsByClassName(option + "-tab-button");
+    for(let i = 0; i < elements.length; i++){
+        elements[i].className += " active";
+    }
 }
 
 
@@ -140,14 +140,14 @@ document.getElementById("room-creation-form-en").addEventListener("submit", even
     event.preventDefault();
     console.log("Create room");
     let formData = new FormData(event.target);
-    socket.emit("create room", {roomName:formData.get("new-room-name"), password:formData.get("new-room-password")});
+    socket.emit("create room", {roomName:formData.get("new-room-name-en"), password:formData.get("new-room-password-en")});
     createdRoom = true;
     return false;
 });
 document.getElementById("room-creation-form-ja").addEventListener("submit", event =>{
     event.preventDefault();
     let formData = new FormData(event.target);
-    socket.emit("create room", {roomName:formData.get("new-room-name"), password:formData.get("new-room-password")});
+    socket.emit("create room", {roomName:formData.get("new-room-name-ja"), password:formData.get("new-room-password-ja")});
     createdRoom = true;
     return false;
 });
@@ -180,12 +180,12 @@ function updateCurrentRoomSize(newRoomSize){
 document.getElementById("room-selection-form-en").addEventListener("submit", event => {
     event.preventDefault();
     let formData = new FormData(event.target);
-    socket.emit("join room", {roomName:formData.get("radio-roomName"), password:formData.get("room-password")});
+    socket.emit("join room", {roomName:formData.get("radio-roomName"), password:formData.get("room-password-en")});
 });
 document.getElementById("room-selection-form-ja").addEventListener("submit", event => {
     event.preventDefault();
     let formData = new FormData(event.target);
-    socket.emit("join room", {roomName:formData.get("radio-roomName"), password:formData.get("room-password")});
+    socket.emit("join room", {roomName:formData.get("radio-roomName"), password:formData.get("room-password-ja")});
 });
 
 socket.on("join failed", () => {
