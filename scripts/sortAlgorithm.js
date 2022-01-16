@@ -92,11 +92,14 @@ function swap(elementA, elementB) {
     });
 }
 function insert(positionFrom, positionTo) {
-    return new Promise(async (resolve) => {
+    return new Promise((resolve) => {
+        blocks[positionFrom].style.transition = "none";
         for (let i = positionFrom; i > positionTo; i--) {
+            blocks[i-1].style.transition = "none";
             switchPositions(blocks[positionFrom], blocks[i - 1]);
-            await delay(30);
+            blocks[i-1].style.transition = "";
         }
+        blocks[positionFrom].style.transition = "";
         window.requestAnimationFrame(() => {
             setTimeout(() => {
                 resolve();
