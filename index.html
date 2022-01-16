@@ -38,7 +38,7 @@
 	<body>
 		<!-- Home -->
 		<div id="home" class="content">
-			<div id="home-left">
+			<div id="home-left" style="display:none;">
 				<h2>Home</h2>
 				<h4 id="name-sentence">Hi! I'm <var id="full-name">Nozomu Koshirae</var>.</h4>
 				<h6 id="nick-name-sentence">I go by <var id="nick-name">Non</var>.</h6>
@@ -63,7 +63,7 @@
 					<p class="arrow-sentence" id="contact-sentence">&lt;&lt;&lt; Get in touch.</p>
 				</div>
 			</div>
-			<div id="home-right">
+			<div id="home-right" style="display:none;">
 				<div id="large-screen-info">
 					<img src="./images/NozomuPortfolioPic.jpg" alt="Nozomu Picture" id="portfolioPic">
 					<h3 id="name-to-edit"></h3>
@@ -108,8 +108,8 @@
 			
 				<script src="scripts/homeAnimation.js"></script>
 			</div>
-			<button id="hidden-info">Hmm awfully empty here...</button>
-			<div id="large-screen">
+			<button id="hidden-info" onclick="showSort()" style="display:none;">Hmm awfully empty here...</button>
+			<div id="large-screen" style="display:flex;">
 				<h3>You found me!</h3>
 				<button onclick="generateBlocks()" id="reset-sort-button">Reset Sort</button>
 				<div id="sort-buttons-container">

@@ -170,6 +170,9 @@ body {
 	justify-content:center;
 	align-items:center;
 }
+#hidden-info{
+	display: none;
+}
 #hidden-info h3{
 	transform: rotate(90deg);
 	color:rgba(31, 40, 48, 0.9);
@@ -800,9 +803,6 @@ body {
 		justify-content: center;
 		align-content: center;
 	}
-	#hidden-info{
-		display: none;
-	}
 	#small-screen-info{
 		display: flex;
 		flex-direction: column;
@@ -841,9 +841,6 @@ body {
 
 @media screen and (min-width: 1921px) {
 	#hidden-info{
-		display: none;
-	}
-	#large-screen{
-		display:flex;
+		display: block;
 	}
 }

@@ -1,3 +1,4 @@
+const sortDiv = document.getElementById("large-screen");
 const container = document.getElementById("sort-container");
 const loadIcon = document.getElementById("sort-loading-icon");
 const sortButtons = document.getElementsByClassName("sort-button");
@@ -21,6 +22,15 @@ const sortAlgorithms = {
     bubbleSort: bubbleSort,
     selectionSort: selectionSort,
 };
+
+window.onresize = () => {
+    if(window.innerWidth < 1100) sortDiv.style.display = "";
+};
+function showSort(){
+    
+    sortDiv.style.display = "flex";
+}
+
 
 async function runSort(sortType) {
     if (sortRunning) await generateBlocks();
@@ -82,9 +92,10 @@ function swap(elementA, elementB) {
     });
 }
 function insert(positionFrom, positionTo) {
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
         for (let i = positionFrom; i > positionTo; i--) {
-            switchPositions(blocks[i], blocks[i - 1]);
+            switchPositions(blocks[positionFrom], blocks[i - 1]);
+            await delay(30);
         }
         window.requestAnimationFrame(() => {
             setTimeout(() => {
@@ -98,6 +109,11 @@ function setColour(element, colour) {
     element.style.backgroundColor = colour;
 }
 
+function getValue(element){
+    return Number(
+        element.childNodes[0].innerHTML
+    );
+}
 function delay(time) {
     return new Promise((resolve) =>
         setTimeout(
@@ -110,14 +126,14 @@ function delay(time) {
 }
 async function bubbleSort() {
     sortRunning = true;
-    for (let i = 0; i < blocks.length - 1 || stopSort; i++) {
-        for (let j = 0; j < blocks.length - i - 1 || stopSort; j++) {
+    for (let i = 0; i < blocks.length - 1; i++) {
+        for (let j = 0; j < blocks.length - i - 1; j++) {
             setColour(blocks[j], sortColour);
             setColour(blocks[j + 1], sortColour);
             await delay();
 
-            const value1 = Number(blocks[j].childNodes[0].innerHTML);
-            const value2 = Number(blocks[j + 1].childNodes[0].innerHTML);
+            const value1 = getValue(blocks[j]);
+            const value2 = getValue(blocks[j + 1]);
 
             if (value1 > value2) {
                 await swap(blocks[j], blocks[j + 1]);
@@ -135,16 +151,14 @@ async function bubbleSort() {
 
 async function selectionSort() {
     sortRunning = true;
-    for (let i = 0; i < blocks.length - 1 || stopSort; i++) {
+    for (let i = 0; i < blocks.length - 1; i++) {
         let minimumIndex = i;
-        let currentMinimumValue = Number(
-            blocks[minimumIndex].childNodes[0].innerHTML
-        );
+        let currentMinimumValue = getValue(blocks[minimumIndex]);
         setColour(blocks[i], sortColourB);
-        for (let j = i + 1; j < blocks.length || stopSort; j++) {
+        for (let j = i + 1; j < blocks.length; j++) {
             setColour(blocks[j], sortColour);
             await delay();
-            const comparisonValue = Number(blocks[j].childNodes[0].innerHTML);
+            const comparisonValue = getValue(blocks[j]);
             if (comparisonValue < currentMinimumValue) {
                 if (minimumIndex != i)
                     setColour(blocks[minimumIndex], baseColour);
@@ -173,16 +187,14 @@ async function selectionSort() {
 
 async function insertionSort() {
     sortRunning = true;
-    for (let i = 1; i < blocks.length || stopSort; i++) {
+    for (let i = 1; i < blocks.length; i++) {
         setColour(blocks[i], sortColourB);
         let insertionElement = blocks[i];
-        let insertionValue = Number(insertionElement.childNodes[0].innerHTML);
-        for (let j = 0; j < i || stopSort; j++) {
+        let insertionValue = getValue(insertionElement);
+        for (let j = 0; j < i; j++) {
             let comparisonElement = blocks[j];
             setColour(comparisonElement, sortColour);
-            let comparisonValue = Number(
-                comparisonElement.childNodes[0].innerHTML
-            );
+            let comparisonValue = getValue(comparisonElement);
             await delay();
             if (insertionValue < comparisonValue) {
                 await insert(i, j);
