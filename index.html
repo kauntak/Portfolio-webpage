@@ -108,6 +108,20 @@
 			
 				<script src="scripts/homeAnimation.js"></script>
 			</div>
+			<button id="hidden-info">Hmm awfully empty here...</button>
+			<div id="large-screen">
+				<h3>You found me!</h3>
+				<button onclick="generateBlocks()" id="reset-sort-button">Reset Sort</button>
+				<div id="sort-buttons-container">
+					<button type="button" class="sort-button" onclick="runSort('bubbleSort')">Bubble Sort</button>
+					<button type="button" class="sort-button" onclick="runSort('quickSort')">Quick Sort</button>
+					<button type="button" class="sort-button" onclick="runSort('selectionSort')">Selection sort</button>
+					<button type="button" class="sort-button" onclick="runSort('insertionSort')">Insertion sort</button>
+					<button type="button" class="sort-button" onclick="runSort('mergeSort')">Merge Sort</button>
+				</div>
+				<section id="sort-container"></section>
+				<div class="lds-default" id="sort-loading-icon"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
 		</div>
 		
 		<div id="portfolio" class="panel">
@@ -385,4 +399,5 @@
 		</div>
 	</body>
 	<script src="scripts/index.js"></script>
+	<script src="scripts/sortAlgorithm.js"></script>
 </html>

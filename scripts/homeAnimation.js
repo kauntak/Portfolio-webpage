@@ -122,6 +122,7 @@ function changeLeft(){
 function changeRight(){
     const rightDiv = document.getElementById("home-right");
     rightDiv.style.width = "80vw";
+    rightDiv.style.maxWidth = "1335px";
     // const profileInfo = document.getElementById("large-screen-info");
     // profileInfo.style.position = "relative";
     // profileInfo.style.left = "10%";
