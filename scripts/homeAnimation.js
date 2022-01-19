@@ -119,18 +119,31 @@ function changeLeft(){
     leftDiv.style.opacity = 0;
     leftDiv.style.width = 0;
 }
+const globe = document.getElementById("myCanvasContainer");
 function changeRight(){
     const rightDiv = document.getElementById("home-right");
+    document.getElementById("large-screen-info").style.left = "10%";;
     rightDiv.style.width = "80vw";
     rightDiv.style.maxWidth = "1335px";
+    let maxWidth = 800;
+    let rightDivInterval = setInterval(() => {
+        maxWidth+= 5;
+        rightDiv.style.maxWidth = maxWidth + "px";
+        if(maxWidth == 1335) {
+            clearInterval(rightDivInterval);
+        }
+    }, 10);
     // const profileInfo = document.getElementById("large-screen-info");
     // profileInfo.style.position = "relative";
     // profileInfo.style.left = "10%";
     // profileInfo.style.top = "5%";
     
-    const globe = document.getElementById("myCanvasContainer");
     globe.style.position = "absolute";
     globe.style.left = "0";
 	globe.style.top = "20vh";
     condenseIn();
+}
+
+window.onresize = () => {
+    if(window.innerWidth <= 1100) globe.style.top = "6vh";
 }
