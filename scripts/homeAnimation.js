@@ -137,7 +137,7 @@ function changeRight(){
     // profileInfo.style.position = "relative";
     // profileInfo.style.left = "10%";
     // profileInfo.style.top = "5%";
-    
+    globe.style.visibility = "visible";
     globe.style.position = "absolute";
     globe.style.left = "0";
 	globe.style.top = "20vh";

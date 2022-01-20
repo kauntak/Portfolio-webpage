@@ -12,9 +12,14 @@
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="author" content="Nozomu Koshirae" />
-        <link rel="shortcut icon" href="./images/koshirae logo_blue.png" />
+        <link rel="shortcut icon" href="./images/Logos/koshirae logo_blue.png" />
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/loadIcon.css" />
+        <link rel="stylesheet" type="text/css" href="css/portfolio.css" />
+        <link rel="stylesheet" type="text/css" href="css/about.css" />
+        <link rel="stylesheet" type="text/css" href="css/sort.css" />
         <link
             href="http://fonts.googleapis.com/css?family=Electrolize"
             rel="stylesheet"
@@ -268,6 +273,15 @@
                                 </li>
                                 <li>
                                     <a
+                                        data-weight="25"
+                                        href="https://www.python.org/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >Python</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
                                         data-weight="19"
                                         href="https://en.wikipedia.org/wiki/Microsoft_Office"
                                         target="_blank"
@@ -464,99 +478,274 @@
 
         <div id="about" class="panel">
             <div class="content">
-                <h2>About</h2>
-                <p>
-                    Relationships, problem solving, creating, and learning;
-                    these are my four passions that help me maintain my core
-                    belief of living life to bring joy to myself, and others.
-                </p>
-                <p>
-                    The joy of creating something from nothing; with my hands,
-                    digitally, or even unseen things like bonds. <br />
-                    The joy of learning new concepts/activities; more things I
-                    can create, more problems/hurdles to overcome, and more
-                    people I can interact with.<br />
-                    The joy of overcoming problems; problems/hurdles lead to new
-                    learning experiences, and at the same time the brings
-                    opportunity to help others, and create solutions.<br />
-                    The joy that building relationships brings; learning about
-                    people, the chance of learning from others, helping others,
-                    and creating lasting memories.<br />
-                </p>
-
-                <p>
-                    These four passions have led me to learning my wide range of
-                    skills, and connecting with many people both in my
-                    professional and private life.
-                </p>
-                <p>
-                    My main specialties lie in interpersonal skills, and quickly
-                    learning new skills, especially if computer related
-                </p>
-                <br />
-                <p>
-                    Strongest skills: JavaScript/Node.JS, SQL, Adobe Photoshop,
-                    Adobe InDesign, leadership, patience, communication,
-                    self-reliance, patience, empathy, adaptability, critical
-                    thinking, and problem solving.
-                </p>
-                <p>
-                    Skills: MongoDB, Squarespace, Wordpress, Python, HTML/CSS,
-                    Adobe Premier Pro, Adobe Illustrator, MS Office Suite, Godot
-                    Game Engine.
-                </p>
-                <br />
-                <div class="skill-logo-container">
-                    <img
-                        src="./images/Logos/nodejs_logo.png"
-                        alt="NodeJS Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/Javascript.png"
-                        alt="Javascript Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/HTML.png"
-                        alt="HTML Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/CSS.png"
-                        alt="CSS Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/Electron_logo.png"
-                        alt="Electron Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/mongoDB_logo.png"
-                        alt="mongoDB Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/SQL_logo.png"
-                        alt="SQL Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/PS_logo.png"
-                        alt="Photoshop Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/Id_logo.png"
-                        alt="InDesign Logo"
-                        class="skill-logo"
-                    />
-                    <img
-                        src="./images/Logos/Pr_logo.png"
-                        alt="Premier Pro Logo"
-                        class="skill-logo"
-                    />
+                <div class="tab">
+                    <button class="tablinks active" id="about-content-tab-button" onclick="openAbout(event, 'about-content')">About</button>
+                    <button class="tablinks" id="resume-content-tab-button" onclick="openAbout(event, 'resume-content')">Resume</button>
+                    <a href="./media/Nozomu_Koshirae_Resume.pdf" id="resume-link" download>Download</a>
+                  </div>
+                <div id="about-content" class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Relationships, problem solving, creating, and learning;
+                            these are my four passions that help me maintain my core
+                            belief of living life to bring joy to myself, and others.
+                        </p>
+                        <p>
+                            The joy of creating something from nothing; with my hands,
+                            digitally, or even unseen things like bonds. <br />
+                            The joy of learning new concepts/activities; more things I
+                            can create, more problems/hurdles to overcome, and more
+                            people I can interact with.<br />
+                            The joy of overcoming problems; problems/hurdles lead to new
+                            learning experiences, and at the same time the brings
+                            opportunity to help others, and create solutions.<br />
+                            The joy that building relationships brings; learning about
+                            people, the chance of learning from others, helping others,
+                            and creating lasting memories.<br />
+                        </p>
+        
+                        <p>
+                            These four passions have led me to learning my wide range of
+                            skills, and connecting with many people both in my
+                            professional and private life.
+                        </p>
+                        <p>
+                            My main specialties lie in interpersonal skills, and quickly
+                            learning new skills, especially if computer related
+                        </p>
+                        <br />
+                        <p>
+                            Strongest skills: JavaScript/Node.JS, SQL, Adobe Photoshop,
+                            Adobe InDesign, leadership, patience, communication,
+                            self-reliance, patience, empathy, adaptability, critical
+                            thinking, and problem solving.
+                        </p>
+                        <p>
+                            Skills: MongoDB, Squarespace, Wordpress, Python, HTML/CSS,
+                            Adobe Premier Pro, Adobe Illustrator, MS Office Suite, Godot
+                            Game Engine.
+                        </p>
+                        <br />
+                        <div class="skill-logo-container">
+                            <img
+                                src="./images/Logos/nodejs_logo.png"
+                                alt="NodeJS Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/Javascript.png"
+                                alt="Javascript Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/HTML.png"
+                                alt="HTML Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/CSS.png"
+                                alt="CSS Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/Electron_logo.png"
+                                alt="Electron Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/mongoDB_logo.png"
+                                alt="mongoDB Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/SQL_logo.png"
+                                alt="SQL Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/PS_logo.png"
+                                alt="Photoshop Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/Id_logo.png"
+                                alt="InDesign Logo"
+                                class="skill-logo"
+                            />
+                            <img
+                                src="./images/Logos/Pr_logo.png"
+                                alt="Premier Pro Logo"
+                                class="skill-logo"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="resume-content" class="about-content" style="max-height: 0px;">
+                        <div class="about-text">
+                            <p>9+ year entrepreneur with 2 years of experience as a Software Developer. Ability to juggle multiple tasks and responsibilities, and possess a repertoire of interpersonal, computer, analytical, problem solving, administrative, managerial and adaptability skills. Able to operate at both the 10,000 foot level and at the 10 inch level.</p>
+                        <section class="collapsable">
+                            <input type="checkbox" name="collapse" id="collapseCheckProjects">
+                            <h2 class="sectionHeading"><label for="collapseCheckProjects" class="title">PROJECTS</label></h2>
+                            <div class="collapsable-content">
+                                <section class="collapsable">
+                                    <input type="checkbox" name="collapse" id="collapseCheckSamba">
+                                    <h2 class="sectionHeading"><label for="collapseCheckSamba" class="subtitle">SambaPOS Point of Sales Integration</label></h2>
+                                    <div class="collapsable-content">
+                                        <p>Spearheaded a project that integrated modules for a Point of Sales system(SambaPOS) which has reduced error rates from roughly 5% to 0.004%(50 errors in the last 14,000 orders); decreased order input time by 99%; and reduced end-of-day closing time by 10%(if end-of-day totals were not matching, reduced closing time by over 90%)</p>
+                                        <ul>
+                                            <li>
+                                                -Deliverect integration: Automatically process orders
+                                                that were pushed from Deliverect, and add/settle/cancel
+                                                orders in SambaPOS.
+                                            </li>
+                                            <li>
+                                                -Gloria Foods integration: Poll for new orders, and add
+                                                new orders to SambaPOS.
+                                            </li>
+                                            <li>
+                                                -Clover Payments integration: Poll for new payments and
+                                                settle corresponding tickets.
+                                            </li>
+                                            <li>
+                                                -Online report viewer: View current total sales, evening
+                                                hold order totals, and current displayed orders.
+                                            </li>
+                                            <li>
+                                                -Kitchen Display System: Send orders to appropriate
+                                                screen; ordering items by seat, and item.
+                                            </li>
+                                            <li>
+                                                -Future orders: Will send the orders to the KDS at
+                                                appropriate time, considering current orders, and the
+                                                size of the order on hold.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            Back end: nodeJS, expressJS, SQL Server, Rest API, GraphQL
+                                        </p>
+                                        <br />
+                                        <p>Front End: HTML, CSS, JavaScript, electronJS</p>
+                                        <br />
+                                        <p>Tools: ngrok</p>
+                                        <br/>
+                                        <a
+                                            href="http://github.com/kauntak/SambaPOS-integration"
+                                            target="_blank" class="project-link"
+                                            >Github Link</a
+                                        >
+                                    </div>
+                                </section>
+                                <section class="collapsable">
+                                    <input type="checkbox" name="collapse" id="collapseCheckWerewolf">
+                                    <h2 class="sectionHeading"><label for="collapseCheckWerewolf" class="subtitle">Werewolf Game</label></h2>
+                                    <div class="collapsable-content">
+                                        <h5>An online multiplayer social deduction game powered by nodeJS, socket.io, and aws.</h5>
+                                        <ul>
+                                            <li>-Multi-language live switching.</li>
+                                            <li>-Chat functionality.</li>
+                                            <li>-</li>
+                                        </ul>
+                                        <p>Front End: HTML, CSS, Javascript</p>
+                                        <br/>
+                                        <p>Back End: nodeJS, expressJS, socket.io</p>
+                                        <br/>
+                                        <p>Tools: AWS</p>
+                                        <br/>
+                                        <div>
+                                            <a href="https://github.com/kauntak/Werewolf_Game" target="_blank" class="project-link">Github Link</a>
+                                            <a href="http://werewolfgame.link" target="_blank" class="project-link">Live Page</a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                        
+                        
+                        <section class="collapsable">
+                            <input type="checkbox" name="collapse" id="collapseCheckExperience">
+                            <h2 class="sectionHeading"><label for="collapseCheckExperience" class="title">EXPERIENCE</label></h2>
+                            <div class="collapsable-content">
+                                <section class="collapsable">
+                                    <input type="checkbox" name="collapse" id="collapseCheckFreelance">
+                                    <h2 class="sectionHeading"><label for="collapseCheckFreelance" class="subtitle">Freelance Developer/I.T. Support</label></h2>
+                                    <div class=collapsable-content>
+                                        <h6>June 2020 - Present</h6>
+                                        <ul>
+                                            <li>-Design, develop, test, and install integrated software. Utilized JavaScript, JScript, Node.js, SQL Server, GQL, and third party APIs.</li>
+                                            <li>-Coordinate with clients to study further needs and design and implement product improvements to increase utility of integrated software.</li>
+                                            <li>-Install, maintain, monitor, and update software and hardware.</li>
+                                            <li>-Efficiently plan and prioritize all incoming issues and concerns, and responding to and resolving  in a timely manner.</li>
+                                            <li>-Provide technical training for end-users on usage, and basic troubleshooting procedures.</li>
+                                            <li>-Remote and in-person troubleshooting and technical assistance; including step-by-step walkthroughs of problem-solving processes.</li>
+                                            <li>-Provide accurate information on IT related products and services according to client needs.</li>
+                                        </ul>
+                                        
+                                    </div>
+                                </section>
+                                <section class="collapsable">
+                                    <input type="checkbox" name="collapse" id="collapseCheckDirector">
+                                    <h2 class="sectionHeading"><label for="collapseCheckDirector" class="subtitle">Director</label></h2>
+                                    <div class=collapsable-content>
+                                        <h6>Big Catch Sushi Bar: June 2012 - Present</h6>
+                                        <ul>
+                                            <li>-Accountable for managing the day to day operations of the restaurant with active presence on the floor leading the team to deliver service excellence under a bilingual environment.</li>
+                                            <li>-Built deep relationships with clientele, many becoming lasting loyal clients.</li>
+                                            <li>-Allocate material, and human resources to influence cross-functionally. </li>
+                                            <li>-Complaint and conflict resolution in a fast-paced environment.</li>
+                                            <li>-Develop and implement quality assurance standards and programs to ensure high quality standards.</li>
+                                            <li>-Hiring, managing, and promoting the growth and development of internal talent.</li>
+                                            <li>-Designing and drafting instructional/training  guides to create a smooth integration for new staff.</li>
+                                            <li>-Creating restaurant social media content in partnership with the Chef and Marketing team.</li>
+                                            <li>-Coordinate with clients to determine objectives and requirements for events, carry out until final execution, conduct follow-up discussions and develop action plans to address any negative comments.</li>
+                                            <li>-Accountable for driving revenue and profit through the development and implementation of strategies, practices and promotions while in keeping with the overall concept.</li>
+                                            <li>-Creating  and compiling ad-hoc reports and materials for all stakeholders.</li>
+                                            <li>-Procuring supplies and equipment; negotiating costs, building strong vendor relations, inventory management, and training staff in procurement.</li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div> 
+                        </section>
+                        <section class="collapsable">
+                            <input type="checkbox" name="collapse" id="collapseCheckEdu">
+                            <h2 class="sectionHeading"><label for="collapseCheckEdu" class="title">EDUCATION/CERTIFICATES</label></h2>
+                            <div class="collapsable-content">
+                                <section class="collapsable">
+                                    <input type="checkbox" name="collapse" id="collapseCheckFreeCodeCamp">
+                                    <h2 class="sectionHeading"><label for="collapseCheckFreeCodeCamp" class="subtitle">freecodecamp.org Certificates</label></h2>
+                                    <div class="collapsable-content">
+                                        <p>Completed projects using complex data structures, networking, relational databases, and data visualization; built multiple web applications and microservices utilizing Node.js, npm, mongoDB, and the Express framework; Created and implemented algorithms using Object Oriented Programming and Functional Programming paradigms.</p>
+                                        <ul>
+                                            <li>-Scientific Computing with Python Certificate  <a href="https://freecodecamp.org/certification/fcc86a61d05-e777-433e-b570-c86d0e890f63/scientific-computing-with-python-v7" target="_blank">Certificate Link</a></li>
+                                            <li>-Back End Development and APIs Certificate  <a href="https://freecodecamp.org/certification/fcc86a61d05-e777-433e-b570-c86d0e890f63/back-end-development-and-apis" target="_blank">Certificate Link</a></li>
+                                            <li>-JavaScript Algorithms and Data Structure Certificate  <a href="https://freecodecamp.org/certification/fcc86a61d05-e777-433e-b570-c86d0e890f63/javascript-algorithms-and-data-structures" target="_blank">Certificate Link</a></li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section class="collapsable">
+                                    <input type="checkbox" name="collapse" id="collapseCheckSAIT">
+                                    <h2 class="sectionHeading"><label for="collapseCheckSAIT" class="subtitle">Southern Alberta Institute of Technology, Calgary, AB</label></h2>
+                                    <div class="collapsable-content">
+                                        <p>September 2010 - April 2012 Incomplete due to opportunity to start a new business venture.</p>
+                                        <br/>
+                                        <p>Relevant Courses:</p>
+                                        <ul>
+                                            <li>-Computer Hardware and Operating System Essentials</li>
+                                            <li>-Computer Programming Essentials</li>
+                                            <li>-Information Technology Foundations</li>
+                                            <li>-Introduction to Networking</li>
+                                            <li>-Database Design and Programming</li>
+                                            <li>-Object Oriented Programming Essentials</li>
+                                            <li>-Website Development Fundamentals</li>
+                                            <li>-Object Oriented Software Analysis and Design</li>
+                                            <li>-Advanced Object-Oriented Programming</li>
+                                            <li>-Database Programming and Testing</li>
+                                            <li>-Introduction to Database Administration</li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
@@ -588,12 +777,15 @@
                         class="contact-icon"
                     />
                 </a>
-                <br /><br />
+                <br />
+                <p>Or call me:</p>
+                <a href="tel:1-403-465-1881">1-403-465-1881</a>
+                <br/><br/>
                 <p id="email-sentence">
                     Or shoot me an e-mail using the form below or to:
                 </p>
-                <a id="my-email" href="mailto:n.koshirae@gmail.com"
-                    >n.koshirae@gmail.com</a
+                <a id="my-email" href="mailto:non@koshirae.me"
+                    >non@koshirae.me</a
                 >
 
                 <form id="form">
@@ -750,9 +942,10 @@
                 <p>Front End: HTML, CSS, JavaScript, electronJS</p>
                 <br />
                 <p>Tools: ngrok</p>
+                <br/>
                 <a
                     href="http://github.com/kauntak/SambaPOS-integration"
-                    target="_blank"
+                    target="_blank" class="project-link"
                     >Github Link</a
                 >
             </div>
@@ -1053,12 +1246,14 @@
                 <p>Tools: AWS</p>
                 <br/>
                 <div>
-                    <a href="https://github.com/kauntak/Werewolf_Game" target="_blank">Github Link</a>
-                    <a href="werewolfgame.link" target="_blank">Live Page</a>
+                    <a href="https://github.com/kauntak/Werewolf_Game" target="_blank" class="project-link">Github Link</a>
+                    <a href="http://werewolfgame.link" target="_blank" class="project-link">Live Page</a>
                 </div>
             </div>
         </div>
     </body>
     <script src="scripts/index.js"></script>
+    <script src="scripts/overviewModal.js"></script>
+    <script src="scripts/about.js"></script>
     <script src="scripts/sortAlgorithm.js"></script>
 </html>
