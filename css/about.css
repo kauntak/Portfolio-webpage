@@ -7,7 +7,7 @@
 .tab button {
     background-color: rgba(50, 100, 110, 0.7);
     color: white;
-    font-family: "Electrolize";
+    font-family: "Electrolize", Arial, sans-serif;
     font-size: 60px;
     float: center;
     border: none;
