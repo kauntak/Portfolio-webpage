@@ -29,6 +29,11 @@ window.onresize = () => {
         sortDiv.style.display = "";
         hiddenButton.style.display = "";
     }
+    if(window.innerWidth < 1100){
+        TagCanvas.nomouse = true;
+    } else {
+        TagCanvas.nomouse = false;
+    }
 };
 function showSort() {
     sortDiv.style.display = "flex";
